@@ -3,9 +3,7 @@ package com.igorwojda.integer.countdown
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-private fun countDown(n: Int): List<Int> {
-    TODO("not implemented")
-}
+private fun countDown(n: Int): List<Int> = n.downTo(0).toList()
 
 private class Test {
     @Test
