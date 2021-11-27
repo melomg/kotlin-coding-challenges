@@ -4,7 +4,19 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun equalDigitFrequency(i1: Int, i2: Int): Boolean {
-    TODO("not implemented")
+    val i1Str = i1.toString()
+    val i2Str = i2.toString()
+
+    if (i1Str.length != i2Str.length) return false
+
+    val frequency1 = i1Str
+        .groupingBy { it }
+        .eachCount()
+    val frequency2 = i2Str
+        .groupingBy { it }
+        .eachCount()
+
+    return frequency1 == frequency2
 }
 
 private class Test {
