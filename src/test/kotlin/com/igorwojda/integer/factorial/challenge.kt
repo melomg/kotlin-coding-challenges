@@ -2,9 +2,12 @@ package com.igorwojda.integer.factorial
 
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
+import java.lang.IllegalArgumentException
 
-private fun factorial(n: Int): Int {
-    TODO("not implemented")
+private fun factorial(n: Int): Int = when {
+    (n < 0) -> throw IllegalArgumentException("Argument cannot be lower than zero...")
+    (n == 0 || n == 1) -> 1
+    else -> n.downTo(1).reduce { acc, i -> acc * i }
 }
 
 class RecursiveFactorial {
