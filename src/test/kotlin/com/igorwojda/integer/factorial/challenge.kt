@@ -17,6 +17,11 @@ class RecursiveFactorial {
     }
 
     @Test
+    fun `factorial 1 should equal 1`() {
+        factorial(1) shouldBeEqualTo 1
+    }
+
+    @Test
     fun `factorial 3 should equal 6`() {
         factorial(3) shouldBeEqualTo 6
     }
