@@ -3,9 +3,11 @@ package com.igorwojda.integer.countupanddown
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-private fun countUpAndDown(n: Int): List<Int> {
-    TODO("not implemented")
-}
+private fun countUpAndDown(n: Int): List<Int> = countUpUntil(n) + countDown(n)
+
+private fun countUpUntil(n: Int): List<Int> = 0.until(n).toList()
+
+private fun countDown(n: Int): List<Int> = n.downTo(0).toList()
 
 private class Test {
     @Test
