@@ -4,7 +4,19 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun fibonacci(n: Int): Int {
-    TODO("not implemented")
+    if (n < 2) return n
+
+    var fibonacci = 0
+    var firstPrevious = 0
+    var secondPrevious = 1
+
+    (2..n).forEach { _ ->
+        fibonacci = firstPrevious + secondPrevious
+        firstPrevious = secondPrevious
+        secondPrevious = fibonacci
+    }
+
+    return fibonacci
 }
 
 private class Test {
