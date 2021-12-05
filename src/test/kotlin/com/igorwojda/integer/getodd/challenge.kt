@@ -3,9 +3,7 @@ package com.igorwojda.integer.getodd
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-private fun filterOdd(list: List<Int>): List<Int> {
-    TODO("not implemented")
-}
+private fun filterOdd(list: List<Int>): List<Int> = list.filter { it.rem(2) != 0 }
 
 private class Test {
     @Test
