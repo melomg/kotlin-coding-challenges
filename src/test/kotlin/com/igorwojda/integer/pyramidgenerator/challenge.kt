@@ -2,9 +2,32 @@ package com.igorwojda.integer.pyramidgenerator
 
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
+import kotlin.math.roundToInt
+
+private const val PYRAMID_SYMBOL: Char = '#'
+private const val NEW_LINE: Char = '\n'
+private const val SPACE: Char = ' '
 
 fun generatePyramid(n: Int): List<String> {
-    TODO("not implemented")
+    if (n <= 0) return emptyList()
+
+    val result = mutableListOf<String>()
+    val lastCharCount = 1 + (n - 1) * 2
+
+    (0 until n).forEach { i ->
+        val symbolCount = (i * 2) + 1
+        val spaceCount = (lastCharCount - symbolCount) / 2
+
+        var spaces = ""
+        var symbols = ""
+
+        repeat(spaceCount) { spaces += SPACE }
+        repeat(symbolCount) { symbols += PYRAMID_SYMBOL }
+
+        result.add("$spaces$symbols$spaces")
+    }
+
+    return result
 }
 
 private class Test {
